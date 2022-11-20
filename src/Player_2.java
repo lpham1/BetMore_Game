@@ -15,7 +15,8 @@ public class Player_2 extends Player {
     public void play() {
         // TODO Auto-generated method stub
         int x = 0;
-        int count = 0;        
+        int count = 0;     
+        Scanner s = new Scanner(System.in);   
         while (!user_selected && count < 6) {
             count += 1;
             x = Shuffle.generateNumber();
@@ -25,19 +26,20 @@ public class Player_2 extends Player {
             + ". This will be your final card.");
             break;
             }
-            Scanner s = new Scanner(System.in);
+            s = new Scanner(System.in);
             System.out.println("Card drawn is: " + x
             + ". Do you want to pick another card? Type Y or N?");
             String answer = s.nextLine();
-            s.close();
             if (answer.equals("N")) {
                 user_selected = true;
-                System.out.println(user_selected);
+                // System.out.println(user_selected);
                 break;
             }
         }
         this.setPicked_num(x);
         System.out.println("Player 2 chose "+ x);
+        s.close();
+
     }
 
 }
